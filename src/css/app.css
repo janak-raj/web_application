@@ -1,0 +1,1068 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+:-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+* {
+  box-sizing: border-box;
+}
+h2, h3 {
+  text-align: center;
+}
+body {
+  font-family: 'Electrolize', sans-serif;;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  top: 0;
+  background-color: #FFF;
+  color: #000;
+  padding: 10px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  position: fixed;
+  z-index: 2;
+}
+
+header h1 {
+  font-size: 18px;
+}
+
+#toggleSidebar {
+  width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    position: absolute;
+    top: .6rem;
+    right: 1rem;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+nav {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3.9rem;
+  bottom: 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+nav a {
+  text-align: center;
+  padding: 10px;
+  flex-grow: 1;
+  text-decoration: none;
+  color: goldenrod;
+}
+
+.content {
+  padding: 100px;
+  margin-bottom: 160px;
+  overflow-y: auto;
+}
+
+.intro {
+  width: 100%;
+  height: auto;
+}
+
+/* Media query for mobile view */
+@media (max-width: 600px) {
+  nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  nav a {
+    flex-grow: 1;
+    text-align: center;
+  }
+  .content {
+    padding: 20px;
+    margin-top: 2.4rem;
+    margin-bottom: 60px; /* Make space for the fixed navigation bar */
+  }
+
+  .intro img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Media query for desktop view */
+@media (min-width: 601px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    bottom: unset; /* Remove the "bottom" positioning */
+  }
+  nav a {
+    flex-grow: 1;
+    text-align: center;
+  }
+  .content {
+    margin-top: 40px; /* Make space for the fixed navigation bar */
+  }
+}
+
+nav a {
+  text-align: center;
+  padding: 10px;
+  flex-grow: 1;
+  text-decoration: none;
+  color: goldenrod;
+  transition: background-color 0.3s; /* Hover effect */
+}
+
+nav a:hover {
+  background-color: #555; /* Hover background color */
+}
+
+/* Active link style */
+nav a.active {
+  background-color: #555; /* Active background color */
+}
+
+.side_nav {
+  height: 85.2%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 4rem;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.side_nav a {
+  padding: 8px 8px 8px 32px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+  text-decoration: none;
+  font-size: 16px;
+  color: goldenrod;
+  display: block;
+  transition: 0.3s;
+  margin-top: 0.2em;
+}
+
+.side_nav a:first-child {
+  padding: 4px;
+  border: none;
+  color: #000;
+  text-align: center;
+}
+
+.side_nav a:hover {
+  color: #f1f1f1;
+}
+
+.side_nav .close_btn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .side_nav {
+    padding-top: 15px;
+  }
+  .side_nav a {
+    font-size: 18px;
+  }
+}
+
+.article_title {
+  text-align: center;
+  font-size: 18px;
+}
+
+.article {
+  text-align: center;
+  font-size: 16px;
+}
+
+.cards {
+  width: 100%;
+  height: auto;
+  margin-top: 2em;
+  padding-bottom: 80px;
+}
+
+.card {
+  padding: 20px;
+  height: auto;
+  margin-top: 2em;
+  border-radius: 6px;
+  border-top: 2px solid goldenrod;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.card div {
+  margin-top: 1em;
+}
+
+.card .card_number {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card .card_number h1 {
+  width: 80px;
+  border-radius: 50%;
+  background-color: purple;
+  color: #FFF;
+  padding: 20px;
+  font-weight: bolder;
+}
+
+.card .card_title {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 20px;
+}
+
+.card .invest, .period, .rate, .earning {
+  width: 100%;
+  height: auto;
+  background-color: #BC7AF9;
+  padding: 6px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  color: #000;
+  font-size: 20px;
+}
+
+.card .buy_button button {
+  width: 60%;
+  height: 60px;
+  font-size: 18px;
+  background-color: darkgreen;
+  color: #fff;
+  font-family: 'Electrolize', sans-serif;
+  border: none;
+  border-radius: 10px;
+}
+
+.infinity_sign {
+  content: "\221E";
+  font-size: 20px;
+  transform: scale(.5, 1);
+}
+
+.estimator {
+  width: 100%;
+  height: auto;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: 2px solid goldenrod;
+  margin-top: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 6px;
+}
+
+.estimator .calculator {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.calculator div.sec {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1em;
+  background-color: gold;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.calculator div.sec:nth-child(2) {
+  background-color: greenyellow;
+}
+
+.calculator div.sec:last-child {
+  background-color: unset;
+}
+
+.calculator button {
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  color: #000;
+  background-color: lightblue;
+  text-transform: uppercase;
+  font-weight: bolder;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Electrolize', sans-serif;
+}
+
+.calculator label {
+  font-size: 16px;
+  text-align: left;
+  line-height: 40px;
+}
+
+.dollar_input_box {
+  width: 40%;
+  height: auto;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.calculator input {
+  width: 80%;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  inset: initial;
+  font-size: 16px;
+  font-family: 'Electrolize', sans-serif;
+}
+
+.collapsibles {
+  padding-bottom: 80px;
+}
+
+.collapsible {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-family: 'Electrolize', Courier, monospace;
+  font-size: 16px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.active, .collapsible:hover {
+  background-color: goldenrod;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.collapsible_content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+.input-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 10px;
+  background-color: antiquewhite;
+}
+
+.chat_area {
+  width: 100%;
+  height: auto;
+  padding-bottom: 120px;
+}
+
+.chat_box {
+  margin-top: 1em;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  height: 650px;
+  overflow-y: hidden;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.messages {
+  width: 100%;
+  height: 90%;
+  padding: 10px;
+  background-color: aliceblue;
+  overflow-y: auto;
+}
+
+#messageInput {
+  width: 80%;
+  height: 50px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+  outline: none;
+  line-height: 20px;
+}
+
+#sendButton {
+  width: 20%;
+  height: 50px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#sendButton:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+}
+
+.outgoing {
+  flex-direction: row-reverse;
+}
+
+.message-icon {
+  margin: 0 10px;
+}
+
+.message-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.outgoing .message-icon {
+  margin: 0 10px;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
+
+.contact_form {
+  width: 100%;
+  height: auto;
+}
+
+.contact_form .form_container {
+  width: 100%;
+  height: auto;
+  margin-top: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact_form .form_container form {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.contact_form .form_container form h2 {
+  font-size: 30px;
+  font-family: Cambria;
+  border-bottom: 2px solid #eee;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact_form .form_container form input {
+  width: 97%;
+  height: 40px;
+  padding-left: 10px;
+  outline-color: cyan;
+  border-left-color: #00bb00;
+  border-right-color: #bb0000;
+  border-top-color: #0000bb;
+  border-bottom-color: #ff4500;
+  font-size: 16px;
+  border-radius: 6px;
+  font-family: arial;
+  margin-top: 0.5em;
+}
+
+.contact_form .form_container input:nth-child(2) {
+  outline-color: red;
+}
+
+.contact_form .form_container input:nth-child(3) {
+  outline-color: green;
+}
+
+.contact_form .form_container input:nth-child(4) {
+  outline-color: blue;
+}
+
+.contact_form .form_container form textarea {
+  width: 97.5%;
+  height: 200px;
+  margin-top: 0.5em;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 16px;
+  font-family: arial;
+  outline-color: cyan;
+  border-left-color: #00bb00;
+  border-right-color: #bb0000;
+  border-top-color: #0000bb;
+  border-bottom-color: #ff4500;
+  resize: none;
+  border-radius: 6px;
+}
+
+.btn {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn button {
+  width: 80%;
+  height: 50px;
+  margin-top: 1em;
+  cursor: pointer;
+  font-size: 18px;
+  border-left-color: #00bb00;
+  border-right-color: #bb0000;
+  border-top-color: #0000bb;
+  border-bottom-color: #ff4500;
+  border-width: 4px;
+  font-family: 'Electrolize', sans-serif;
+  animation: borderChanger 1s infinite;
+  border-radius: 10px;
+}
+
+.btn button:hover {
+  background-color: #000000;
+  color: #00bb00;
+}
+
+@keyframes borderChanger {
+  from {
+    border-left-color: #00bb00;
+    border-right-color: #bb0000;
+    border-top-color: #0000bb;
+    border-bottom-color: #ff4500;
+  }
+  to {
+    border-left-color: #ff4500;
+    border-right-color: #0000bb;
+    border-top-color: #00bb00;
+    border-bottom-color: #bb0000;
+  }
+}
+
+.profile-card {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.profile-info {
+  padding: 20px;
+}
+
+.profile-name {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.profile-title {
+  font-size: 18px;
+  color: #777;
+}
+
+.profile-details {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.detail-item {
+  width: 100%;
+  font-size: 18px;
+  margin: 10px 0;
+  background-color: antiquewhite;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.update-button {
+  width: 100%;
+  height: 50px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-size: 18px;
+  font-family: 'Electrolize', sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5em;
+}
+
+.profile-form {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.form-group {
+  text-align: left;
+  margin: 10px 0;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  font-family: 'Electrolize', sans-serif;
+  padding-left: 16px;
+  margin-top: 0.5em;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.lottery_tickets {
+  padding-bottom: 100px;
+}
+
+.lottery {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.lottery-card {
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  background-image: url(../imgs/illustrator/lotto.jpg);
+  background-size: cover;
+  mix-blend-mode: luminosity;
+}
+
+.lottery-ticket-number {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.lottery-numbers {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #fff;
+}
+/*
+.lottery-background {
+  background-image: url(../imgs/illustrator/lotto.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+*/
+
+.wallet {
+  width: 100%;
+  margin-top: 1.5em;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.balance {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.history {
+  font-size: 18px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.transaction {
+  margin: 5px 0;
+}
+
+.deposit-history {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.withdraw-history {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.settings-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#depositButton, #withdrawButton {
+  width: 45%;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  background-color: goldenrod;
+  font-size: 18px;
+  font-family: 'Electrolize', sans-serif;
+}
+
+#withdrawButton {
+  background-color: darkcyan;
+}
+
+.withdrawal-card {
+  width: 100%;
+  margin-top: 2em;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.address {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.address-input {
+  width: 100%;
+  height: 50px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.update-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* WITHDRAW SECTION */
+.withdrawal-card {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.balance {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.amount-label {
+  font-size: 16px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.amount-input, .address-input {
+  width: 100%;
+  height: 50px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: 'Electrolize', sans-serif;
+  margin-top: 0.5em;
+}
+
+.address-label {
+  font-size: 16px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.withdraw-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  margin-top: 8em;
+  text-align: center;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+/* DEPOSIT SECTION */
+
+.deposit-card {
+  width: 100%;
+  margin-top: 2em;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.deposit-address {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.deposit-address:nth-child(3) {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.deposit-amount-label {
+  font-size: 18px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.deposit-amount-input {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  font-family: 'Electrolize', sans-serif;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 0.5em;
+}
+
+.deposit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Game Section */
+.game_cards {
+  padding-bottom: 80px;
+}
+
+.game {
+  width: 100%;
+  height: auto;
+  background-color: #444;
+  padding: 20px;
+  margin-top: 1em;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.game-card {
+   /* Replace with your game image */
+  background-size: contain;
+  background-position: center;
+  border-radius: 10px;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden; 
+}
+
+.play-button {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: #444;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: goldenrod;
+  font-size: 30px;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button:hover {
+  background-color: #0056b3;
+}
+
+.play-icon {
+  width: 30px;
+  fill: #fff;
+}
+
+.game_region {
+  padding-bottom: 80px;
+}
+
+.game-console {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  height: 600px;
+  margin-top: 1em;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.game-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
