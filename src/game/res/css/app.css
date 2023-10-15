@@ -88,7 +88,7 @@ section#status{
 	position: relative;
 	background-size: cover;
 	width: 100%;
-	z-index: 2;
+	z-index: -0;
 	
 }
 
