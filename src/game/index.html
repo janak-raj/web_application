@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<head>
+	<title>Plebe Slot</title>
+ <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="res/css/modal.css">
+    <link rel="stylesheet" type="text/css" href="res/css/app.css">
+	<link rel="stylesheet" href="res/css/glcf.css">
+    <script src="https://kit.fontawesome.com/a46924b542.js" crossorigin="anonymous"></script>
+</head>
+<html>
+<body onload="runGameLoader()">
+	<div id="gameLoader" style="background: #123456;">
+        <div class="loading-content">
+            <div class="loading-square">
+              <div class="loading-square__7"></div>
+              <div class="loading-square__8"></div>
+              <div class="loading-square__9"></div>
+              <div class="loading-square__4"></div>
+              <div class="loading-square__5"></div>
+              <div class="loading-square__6"></div>
+              <div class="loading-square__1"></div>
+              <div class="loading-square__2"></div>
+              <div class="loading-square__3"></div>
+            </div>
+            <div class="loading-fade">
+              <div class="loading-fade__1">
+                Wanna play game...
+              </div>
+              
+              <div class="loading-fade__3">
+                Spin the Wheel
+              </div>
+              
+              <div class="loading-fade__5">
+                Win Much!
+              </div>
+
+              <div class="loading-fade__7">
+                Just keep playing...
+              </div>
+            </div>
+            <div class="loading-bar">
+              <div class="loading-bar__holder">
+                <div class="loading-bar__filled"></div>
+              </div>
+            </div>
+          </div>
+    </div>
+	<div class="main_area" id="window">
+		<div class="wrapper">
+			<div class="game_area">
+				<main>
+					<div class="game_title">
+						<section id="status">WELCOME!</section>
+					</div>
+					<div id="Slots">
+						<div id="slot1" class="a1"></div>
+						<div id="slot2" class="a1"></div>
+						<div id="slot3" class="a1"></div>
+					</div>
+					<div class="game_play">
+						<section onclick="checkWalletBalanceAvailability()" id="Gira">TAKE A SPIN!</section>
+					</div>
+					<section id="options">
+						<div class="option">
+							<img src="res/icons/audioOn.png" id="audio" class="option" onclick="toggleAudio()" />
+						</div>
+						<div class="option"><i class='bx bx-info-circle'></i></div>
+						<div class="option">
+							<div class="balance"><span>$</span><span id="walletBalanceBucks">00</span><span>.</span><span id="walletBalanceCents">00</span></div>
+							<div class="deposit__btn"><button id="depBtn">Deposit</button></div>
+						</div>
+						<div class="option">
+							<button id="prizeTableBtn">Prize Table</button>
+						</div>
+					</section>
+				</main>
+			</div>
+		</div>
+	</div>
+
+<!-- The Modal -->
+<div id="depositModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Deposit Now</h2>
+    </div>
+    <div class="modal-body">
+      <div class="container__box">
+      	<!--<form>
+      		<div class="form__control">
+      			<label>Enter value to deposit:</label><br>
+      			<input type="number" name="dep_amnt" id="depAmnt">
+      		</div>
+
+      		<div class="form__btn">
+      			<button>Deposit</button>
+      		</div>
+      	</form>-->
+
+      	<div class="dep__area">
+	        <div class="amount-input">
+	          <div class="entry">
+	            <label>Enter amount to deposit</label>
+	            <div class="entry-input">
+	              <i class="fas fa-dollar-sign"></i>
+	              <input type="number" value="20.00" id="entry" min="0" max="9999" step="0.01" oninput="getDepositAmount(this.value)"/>
+	            </div>
+	          </div>
+	          <div class="win">
+	            <label></label>
+	            <div class="win-input">
+	              <i class="fas fa-dollar-sign"></i>
+	              <input type="text" value="40" id="to_win" disabled/>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="amounts">
+	          
+	        </div>
+	        <div class="place-btn">
+	          <button id="place-entry" onclick="depositNow()" class="btn btn--primary">Deposit Now</button>
+	        </div>
+	      </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <h3></h3>
+    </div>
+  </div>
+
+</div>
+
+<!-- The Modal -->
+<div id="prizeTableModal" class="modal prize__table">
+
+  <!-- Modal content -->
+  <div class="modal-content prize__table">
+    <div class="modal-header">
+      <span class="close__prizes">&times;</span>
+      <h2>Prize Table</h2>
+    </div>
+    <div class="modal-body">
+      <div>
+      	<div style="overflow-x: auto;">
+		  <table width="100%">
+		    <tr>
+		      <th width="80%">Combinations</th>
+		      <th width="20%">Prize</th>
+		    </tr>
+		    <tr>
+		      <td>
+		      	<img src="res/tiles/Plebe_1.jpg"> X
+		      	<img src="res/tiles/Plebe_1.jpg"> X
+		      	<img src="res/tiles/Plebe_1.jpg">
+		      </td>
+		      <td>x15</td>
+		    </tr>
+		    <tr>
+		      <td>
+		      	<img src="res/tiles/Plebe_2.jpg"> X
+		      	<img src="res/tiles/Plebe_2.jpg"> X
+		      	<img src="res/tiles/Plebe_2.jpg">
+		      </td>
+		      <td>x10</td>
+		    </tr>
+		    <tr>
+		      <td>
+		      	<img src="res/tiles/Plebe_3.jpg"> X
+		      	<img src="res/tiles/Plebe_3.jpg"> X
+		      	<img src="res/tiles/Plebe_3.jpg">
+		      </td>
+		      <td>x8</td>
+		    </tr>
+		    <tr>
+		    	<td>
+		      	<img src="res/tiles/P.jpg"> X
+		      	<img src="res/tiles/P.jpg"> X
+		      	<img src="res/tiles/P.jpg">
+		      </td>
+		      <td>x3</td>
+		    </tr>
+		    <tr>
+		    	<td>
+		      	<img src="res/tiles/L.jpg"> X
+		      	<img src="res/tiles/L.jpg"> X
+		      	<img src="res/tiles/L.jpg">
+		      </td>
+		      <td>x3</td>
+		    </tr>
+		    <tr>
+		    	<td>
+		      	<img src="res/tiles/E.jpg"> X
+		      	<img src="res/tiles/E.jpg"> X
+		      	<img src="res/tiles/E.jpg">
+		      </td>
+		      <td>x3</td>
+		    </tr>
+		    <tr>
+		    	<td>
+		      	<img src="res/tiles/B.jpg"> X
+		      	<img src="res/tiles/B.jpg"> X
+		      	<img src="res/tiles/B.jpg">
+		      </td>
+		      <td>x3</td>
+		    </tr>
+		    <tr>
+		    	<td>
+		      	<img src="res/tiles/Plebe_1.jpg"> X
+		      	<img src="res/tiles/Plebe_1.jpg">
+		      </td>
+		      <td>x2</td>
+		    </tr>
+		    <tr>
+		    	<td>
+		      	<img src="res/tiles/Plebe_2.jpg"> X
+		      	<img src="res/tiles/Plebe_2.jpg">
+		      </td>
+		      <td>x1</td>
+		    </tr>
+		    <tr>
+		    	<td>
+		      	<img src="res/tiles/Plebe_3.jpg"> X
+		      	<img src="res/tiles/Plebe_3.jpg">
+		      </td>
+		      <td>x0.5</td>
+		    </tr>
+		  </table>
+		</div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <h3></h3>
+    </div>
+  </div>
+
+</div>
+
+</body>
+<script src="res/js/app.js"></script>
+<script src="res/js/depModal.js"></script>
+<script src="res/js/dep.js"></script>
+<script src="res/js/prizeModal.js"></script>
+<script src="res/js/utils.js"></script>
+</html>

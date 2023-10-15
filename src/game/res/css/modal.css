@@ -1,0 +1,363 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+@font-face {
+  font-family: "TumblingDice";
+  src: url("../fonts/TumblingDice.ttf");
+}
+
+@font-face {
+  font-family: "Alise";
+  src: url("../fonts/Alise.ttf");
+}
+
+@font-face {
+  font-family: "CinemaGothic";
+  src: url("../fonts/CinemaGothic.ttf");
+}
+
+@font-face {
+  font-family: "Outlaw";
+  src: url("../fonts/Outlaw.ttf");
+}
+
+@font-face {
+  font-family: "StoneCold";
+  src: url("../fonts/StoneCold.ttf");
+}
+
+@font-face {
+  font-family: "TrueNorth";
+  src: url("../fonts/TrueNorth.ttf");
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(6, 65, 38, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #064126;
+  margin: auto;
+  padding: 4px;
+  border: 1px solid #888;
+  width: 42%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+#prizeTableModal {
+  top: 0;
+  padding-top: 20px;
+}
+
+.modal-content.prize__table {
+  background: #3a1903;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #880000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close__prizes {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close__prizes:hover,
+.close__prizes:focus {
+  color: #880000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #000000;
+  color: white;
+}
+
+.modal-header h2 {
+  font-size: 30px;
+  text-align: center;
+  font-family: CinemaGothic;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #000000;
+  color: white;
+}
+
+.dep__area {
+  width: 100%;
+  background: #064126;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.9);
+  display: block;
+}
+
+.dep__area .amount-input {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.dep__area .amount-input .entry,
+.win {
+  width: 70%;
+  height: auto;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.dep__area .amount-input .entry {
+  margin-left: 20px;
+}
+
+.dep__area .amount-input label {
+  font-size: 16px;
+  font-family: Constantia;
+  color: #ffffff;
+}
+
+
+.dep__area .amount-input input {
+  width: 60%;
+  height: 40px;
+  font-size: 30px;
+  font-family: Times New Roman;
+  padding-left: 20px;
+  color: #f0a050;
+  border-radius: 0px;
+  border: none;
+  background: #000000;
+  box-shadow: inset 5px 5px 10px #1b051c,
+    inset -5px -5px 10px #6b136e;
+}
+
+.dep__area .amount-input .entry .entry-input,
+.win .win-input {
+  display: flex;
+}
+
+.dep__area .amount-input .entry .entry-input i,
+.win .win-input i {
+  width: 20px;
+  height: 34px;
+  padding: 10px;
+  padding-top: 8px;
+  margin-top: 0.23em;
+  padding-right: 0;
+  padding-bottom: 0px;
+  border-radius: 0px;
+  font-size: 26px;
+  border: none;
+  color: #198a53;
+  background: #000000;
+  box-shadow: inset 5px 5px 10px #000000,
+    inset 5px -5px 10px #000000;
+}
+
+.win .win-input i {
+  display: none;
+}
+
+.dep__area .amount-input .entry .entry-input input {
+  width: 100%;
+  padding-left: 2px;
+  padding-right: 10px;
+  margin-top: 0.2em;
+  background: #000000;
+  box-shadow: inset -5px 5px 10px #000000,
+    inset -5px -5px 10px #000000;
+}
+
+.dep__area .amount-input .win .win-input input {
+  display: none;
+  padding-left: 2px;
+  padding-right: 10px;
+  background: #000000;
+  box-shadow: inset -5px 5px 10px #000000,
+    inset -5px -5px 10px #000000;
+}
+
+.dep__area .amount-input .entry .entry-input input:focus {
+  background: #e0e0e0;
+  outline: none;
+  color: #000000;
+  box-shadow: inset -5px 5px 10px #5a5a5a,
+    inset -5px -5px 10px #ffffff;
+}
+
+.dep__area .amount-input .win .win-input input:focus {
+  background: #e0e0e0;
+  color: #000000;
+  outline: none;
+  box-shadow: inset -5px 5px 10px #5a5a5a,
+    inset -5px -5px 10px #ffffff;
+}
+
+.dep__area .amounts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  padding-top: 0;
+  background: #064126;
+}
+
+.dep__area .amounts h5 {
+  font-size: 14px;
+  font-family: Times New Roman;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dep__area .amounts h5:nth-child(2) {
+  margin-left: 20px;
+}
+
+.dep__area .place-btn {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.dep__area .place-btn button {
+  width: 90%;
+  height: 60px;
+  font-size: 20px;
+  font-family: Constantia;
+  text-transform: uppercase;
+  color: #f0a050;
+  cursor: pointer;
+  border: none;
+  border-radius: 0px;
+  background: #095d34;
+  box-shadow: inset 5px 5px 3px #042515,
+    inset -5px -5px 3px #0e9553;
+}
+
+.dep__area .place-btn button:hover {
+  background: #198a53;
+  box-shadow: inset 5px 5px 3px #0a3721,
+    inset -5px -5px 3px #28dd85;
+  color: #000000;
+}
+
+table {
+  color: #ffffff;
+}
+
+table th {
+  text-align: left;
+}
+
+table th:first-child {
+  padding-left: 30px;
+}
+
+td {
+  font-family: Alise;
+}
+
+td img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Media query for mobile view */
+@media (max-width: 600px) {
+  .modal-content {
+    position: relative;
+    background-color: #064126;
+    margin: auto;
+    padding: 4px;
+    border: 1px solid #888;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    z-index: -10;
+  }
+}
