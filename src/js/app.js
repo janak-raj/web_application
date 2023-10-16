@@ -1,8 +1,10 @@
 const sideNavigationPanel = document.getElementById("mySidenav");
 const toggleButton = document.getElementById("toggleSidebar");
+const toggleButton2 = document.getElementById("toggleSidebar2");
 var click = 0;
 
 toggleButton.addEventListener("click", trackClicks);
+toggleButton2.addEventListener("click", trackClicks);
 
 function trackClicks() {
   click++;
@@ -46,7 +48,8 @@ function toggleCalculator(id) {
   }
 
   calculateButton.onclick = function () {
-    var investmentAmount = estimator.children[0].children[0].children[2].children[1].value;
+    var investmentAmount = estimator.children[0].children[0].children[1].children[1].value;
+    console.log(investmentAmount);
     var estimatedEarning = investmentAmount * (+rate / 100);
     var earningAmountElem = estimator.children[0].children[1].children[1].children[1];
     earningAmountElem.value = +investmentAmount + +estimatedEarning;

@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #ffffff; 
 }
  
 /* Handle */
@@ -19,12 +19,17 @@
   background: #555; 
 }
 
+/* Browser Reset */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
 h2, h3 {
   text-align: center;
 }
+
 body {
   font-family: 'Electrolize', sans-serif;;
   margin: 0;
@@ -33,24 +38,51 @@ body {
   overflow: auto;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* ICONS */
+.icon-dark {
+  color: #000;
+}
+
+/* HEADER SECTION */
 header {
   width: 100%;
-  height: 60px;
+  height: 70px;
+  display: flex;
+  flex-wrap: wrap;
   top: 0;
   background-color: #FFF;
   color: #000;
   padding: 10px;
-  text-align: center;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   position: fixed;
   z-index: 2;
 }
 
-header h1 {
-  font-size: 18px;
+.logo {
+  width: 100%;
+  height: auto;
+  display: flex;
 }
 
-#toggleSidebar {
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo h1 {
+  line-height: 55px;
+  margin-left: 6px;
+  font-size: 20px;
+}
+/* END OF HEADER SECTION */
+
+/* SIDEBAR TOGGLER */
+.toggle-sidebar {
   width: 40px;
     height: 40px;
     border: none;
@@ -63,13 +95,34 @@ header h1 {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+.toggle-sidebar.mobile-nav {
+  display: none;
+}
+
+.toggle-sidebar.desktop-nav {
+  display: block;
+}
+
+.toggle-sidebar.user-toggle {
+  width: 150px;
+  padding: 10px;
+  font-size: 14px;
+  color: goldenrod;
+  box-shadow: none;
+  top: .85rem;
+  border: 1px solid goldenrod;
+}
+
+/* NAVBAR SECTION */
 nav {
+  width: 60%;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-  margin-top: 3.9rem;
+  margin-top: 1rem;
+  margin-left: 16rem;
   bottom: 0;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  /*box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;*/ /* Enable box-shadow if you want */
 }
 
 nav a {
@@ -77,89 +130,65 @@ nav a {
   padding: 10px;
   flex-grow: 1;
   text-decoration: none;
-  color: goldenrod;
+  color: #000;
 }
 
+nav a:hover {
+  background-color: goldenrod; /* Hover background color */
+  border-radius: 6px;
+  opacity: 0.7;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+}
+
+/* Active link style */
+nav .active_nav {
+  background-color: goldenrod; /* Active background color */
+  border-radius: 6px;
+}
+
+.desktop-nav {
+  display: block;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* CONTENT SECTION */
 .content {
-  padding: 100px;
-  margin-bottom: 160px;
+  width: 100%;
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  padding-top: 80px;
+  margin-bottom: 0px;
   overflow-y: auto;
+  padding-bottom: 0;
 }
 
+.content.message_section {
+  padding-top: 40px;
+}
+
+/* INTRO SECTION */
 .intro {
   width: 100%;
   height: auto;
 }
 
-/* Media query for mobile view */
-@media (max-width: 600px) {
-  nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  }
-  nav a {
-    flex-grow: 1;
-    text-align: center;
-  }
-  .content {
-    padding: 20px;
-    margin-top: 2.4rem;
-    margin-bottom: 60px; /* Make space for the fixed navigation bar */
-  }
-
-  .intro img {
-    width: 100%;
-    height: auto;
-  }
+.intro img {
+  width: 60%;
+  height: 400px;
 }
 
-/* Media query for desktop view */
-@media (min-width: 601px) {
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    bottom: unset; /* Remove the "bottom" positioning */
-  }
-  nav a {
-    flex-grow: 1;
-    text-align: center;
-  }
-  .content {
-    margin-top: 40px; /* Make space for the fixed navigation bar */
-  }
-}
-
-nav a {
-  text-align: center;
-  padding: 10px;
-  flex-grow: 1;
-  text-decoration: none;
-  color: goldenrod;
-  transition: background-color 0.3s; /* Hover effect */
-}
-
-nav a:hover {
-  background-color: #555; /* Hover background color */
-}
-
-/* Active link style */
-nav a.active {
-  background-color: #555; /* Active background color */
-}
-
+/* SIDEBAR SECTION */
 .side_nav {
-  height: 85.2%;
+  height: 100%;
   width: 0;
   position: fixed;
   z-index: 1;
-  top: 4rem;
+  top: 4.5rem;
   right: 0;
   background-color: #fff;
   overflow-x: hidden;
@@ -173,21 +202,23 @@ nav a.active {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
   text-decoration: none;
   font-size: 16px;
-  color: goldenrod;
+  color: #000;
   display: block;
   transition: 0.3s;
   margin-top: 0.2em;
 }
 
-.side_nav a:first-child {
-  padding: 4px;
-  border: none;
-  color: #000;
-  text-align: center;
+.side_nav a i {
+  width: 30px;
 }
 
 .side_nav a:hover {
-  color: #f1f1f1;
+  color: goldenrod;
+}
+
+.side_nav a.active_nav {
+  background-color: goldenrod;
+  border-radius: 6px;
 }
 
 .side_nav .close_btn {
@@ -198,13 +229,8 @@ nav a.active {
   margin-left: 50px;
 }
 
-@media screen and (max-height: 450px) {
-  .side_nav {
-    padding-top: 15px;
-  }
-  .side_nav a {
-    font-size: 18px;
-  }
+.side_nav .mobile-nav {
+  display: none;
 }
 
 .article_title {
@@ -217,9 +243,26 @@ nav a.active {
   font-size: 16px;
 }
 
+.container, .faq_container, .contact_container, .message_container {
+  width: 50%;
+}
+
+.container.wallet_component {
+  width: 30%;
+}
+
+.plans_container, .games_container, .tickets_container, .game_window {
+  width: 90%;
+  height: auto;
+}
+
+/* PLANS SECTION */
 .cards {
   width: 100%;
   height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin-top: 2em;
   padding-bottom: 80px;
 }
@@ -231,6 +274,7 @@ nav a.active {
   border-radius: 6px;
   border-top: 2px solid goldenrod;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
 }
 
 .card div {
@@ -258,7 +302,7 @@ nav a.active {
   width: 100%;
   height: auto;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .card .invest, .period, .rate, .earning {
@@ -270,12 +314,12 @@ nav a.active {
   padding-bottom: 10px;
   border-radius: 4px;
   color: #000;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .card .buy_button button {
   width: 60%;
-  height: 60px;
+  height: 40px;
   font-size: 18px;
   background-color: darkgreen;
   color: #fff;
@@ -316,7 +360,7 @@ nav a.active {
   justify-content: space-between;
   margin-top: 1em;
   background-color: gold;
-  padding: 10px;
+  padding: 5px;
   border-radius: 6px;
 }
 
@@ -330,7 +374,7 @@ nav a.active {
 
 .calculator button {
   width: 100%;
-  height: 60px;
+  height: 50px;
   font-size: 16px;
   color: #000;
   background-color: lightblue;
@@ -339,12 +383,13 @@ nav a.active {
   border: none;
   border-radius: 6px;
   font-family: 'Electrolize', sans-serif;
+  cursor: pointer;
 }
 
 .calculator label {
-  font-size: 16px;
-  text-align: left;
+  font-size: 15px;
   line-height: 40px;
+  margin-left: 3em;
 }
 
 .dollar_input_box {
@@ -366,56 +411,214 @@ nav a.active {
   font-family: 'Electrolize', sans-serif;
 }
 
-.collapsibles {
+
+
+
+
+
+/* Game Section */
+.game_cards {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding-bottom: 80px;
 }
 
-.collapsible {
+.game {
+  width: 30%;
+  height: auto;
   background-color: #fff;
-  color: #000;
-  cursor: pointer;
-  padding: 18px;
+  padding: 20px;
+  margin-top: 1em;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.game-card {
+   /* Replace with your game image */
+  background-size: contain;
+  background-position: center;
+  border-radius: 10px;
   width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-family: 'Electrolize', Courier, monospace;
-  font-size: 16px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.active, .collapsible:hover {
-  background-color: goldenrod;
-}
-
-.collapsible:after {
-  content: '\002B';
-  color: white;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2212";
-}
-
-.collapsible_content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-}
-
-.input-container {
-  display: flex;
+  height: 200px;
   position: relative;
-  align-items: center;
-  padding: 10px;
-  background-color: antiquewhite;
+  overflow: hidden; 
+  border: 2px solid goldenrod;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+.play-button {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: goldenrod;
+  font-size: 30px;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button:hover {
+  background-color: gold;
+  color: #000;
+}
+
+.play-icon {
+  width: 30px;
+  fill: #fff;
+}
+
+.other-info {
+  width: 100%;
+  height: auto;
+  margin-top: 0.5em;
+}
+
+.other-info .game_name {
+  width: 100%;
+  background-color: goldenrod;
+  border-radius: 2px;
+  padding: 6px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.other-info .subtitle {
+  font-size: 14px;
+  margin-top: 0.3em;
+}
+
+.game_region {
+  padding-bottom: 80px;
+}
+
+.game-console {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  height: 600px;
+  margin-top: 0em;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.gt {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game_title {
+  width: 60%;
+  background-color: goldenrod;
+  border-radius: 2px;
+  padding: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 4px;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  border-top: 4px solid gold;
+  border-right: 2px solid red;
+  border-left: 2px solid red;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.game_title span {
+  font-size: 14px;
+}
+
+.game-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media screen and (max-height: 450px) {
+  .side_nav {
+    padding-top: 15px;
+  }
+  .side_nav a {
+    font-size: 18px;
+  }
+}
+
+/* TICKETS SECTION */
+.lottery_tickets {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 100px;
+  margin-top: 2em;
+}
+
+.lottery {
+  width: 24%;
+  height: auto;
+  margin-top: 1em;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-right: 2px solid goldenrod;
+  border-left: 2px solid goldenrod;
+}
+
+.lottery-card {
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  background-image: url(../imgs/illustrator/lotto.jpg);
+  background-size: cover;
+  border: 2px solid goldenrod;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
+  background-blend-mode: luminosity;
+}
+
+.lottery-ticket-number {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.lottery-numbers {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #fff;
+}
+/*
+.lottery-background {
+  background-image: url(../imgs/illustrator/lotto.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+*/
+
+/* MESSAGE SECTION */
 .chat_area {
   width: 100%;
   height: auto;
@@ -423,13 +626,13 @@ nav a.active {
 }
 
 .chat_box {
-  margin-top: 1em;
+  margin-top: 0.5em;
   width: 100%;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
-  height: 650px;
+  height: 600px;
   overflow-y: hidden;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -497,6 +700,187 @@ nav a.active {
   color: #888;
   margin-top: 5px;
 }
+
+/* Media query for mobile view */
+@media (max-width: 600px) {
+  /* SIDEBAR TOGGLER */
+  .toggle-sidebar.mobile-nav {
+    display: block;
+  }
+  
+  .toggle-sidebar.desktop-nav {
+    display: none;
+  }
+
+  nav {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin-left: 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  nav a {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-nav {
+    display: block;
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 5rem;
+    margin-bottom: 60px; /* Make space for the fixed navigation bar */
+  }
+
+  .content.message_section {
+    margin-top: 2.6rem;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .intro {
+    width: 100%;
+    height: auto;
+  }
+
+  .intro img {
+    width: 100%;
+    height: auto;
+  }
+
+  .side_nav {
+    height: 84%;
+  }
+
+  .side_nav .desktop-nav {
+    display: none;
+  }
+  
+  .side_nav .mobile-nav {
+    display: block;
+  }
+
+  .plans_container, .games_container, .faq_container, .contact_container, .message_container, .game_window {
+    width: 100%;
+  }
+
+  .container.wallet_component {
+    width: 100%;
+  }
+  
+  .calculator label {
+    margin-left: 0.5em;
+  }
+
+  .game {
+    width: 90%;
+  }
+
+  .lottery {
+    width: 100%;
+  }
+  
+  .chat_box {
+    height: 650px;
+  }
+
+  .game_title {
+    width: 100%;
+  }
+}
+
+/* Media query for desktop view */
+@media (min-width: 601px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    bottom: unset; /* Remove the "bottom" positioning */
+  }
+  nav a {
+    flex-grow: 1;
+    text-align: center;
+  }
+  .content {
+    margin-top: 40px; /* Make space for the fixed navigation bar */
+  }
+}
+
+
+
+
+
+
+
+.collapsibles {
+  margin-top: 2em;
+  padding-bottom: 80px;
+}
+
+.collapsible {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-family: 'Electrolize', Courier, monospace;
+  font-size: 16px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.active, .collapsible:hover {
+  background-color: goldenrod;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.collapsible_content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+.input-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 10px;
+  background-color: antiquewhite;
+}
+
+
 
 .contact_form {
   width: 100%;
@@ -710,50 +1094,7 @@ nav a.active {
   border-radius: 5px;
 }
 
-.lottery_tickets {
-  padding-bottom: 100px;
-}
 
-.lottery {
-  width: 100%;
-  height: auto;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-
-.lottery-card {
-  width: 100%;
-  border-radius: 10px;
-  text-align: center;
-  padding: 20px;
-  background-image: url(../imgs/illustrator/lotto.jpg);
-  background-size: cover;
-  mix-blend-mode: luminosity;
-}
-
-.lottery-ticket-number {
-  font-size: 20px;
-  margin: 10px 0;
-  color: #fff;
-}
-
-.lottery-numbers {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 20px 0;
-  color: #fff;
-}
-/*
-.lottery-background {
-  background-image: url(../imgs/illustrator/lotto.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100px;
-  border-radius: 10px;
-  margin: 20px 0;
-}
-*/
 
 .wallet {
   width: 100%;
@@ -764,6 +1105,7 @@ nav a.active {
   border-radius: 10px;
   padding: 20px;
   text-align: center;
+  margin-bottom: 2em;
 }
 
 .balance {
@@ -811,6 +1153,10 @@ nav a.active {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+.settings-button:hover {
+  background-color: goldenrod;
+}
+
 #depositButton, #withdrawButton {
   width: 45%;
   height: 50px;
@@ -819,10 +1165,15 @@ nav a.active {
   background-color: goldenrod;
   font-size: 18px;
   font-family: 'Electrolize', sans-serif;
+  cursor: pointer;
 }
 
 #withdrawButton {
   background-color: darkcyan;
+}
+
+#depositButton:hover, #withdrawButton:hover {
+  opacity: 0.7;
 }
 
 .withdrawal-card {
@@ -833,6 +1184,7 @@ nav a.active {
   border-radius: 10px;
   padding: 20px;
   text-align: center;
+  margin-bottom: 2em;
 }
 
 .address {
@@ -847,6 +1199,7 @@ nav a.active {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  outline: none;
 }
 
 .update-button {
@@ -857,6 +1210,10 @@ nav a.active {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+}
+
+.update-button:hover {
+  background-color: goldenrod;
 }
 
 /* WITHDRAW SECTION */
@@ -890,6 +1247,7 @@ nav a.active {
   font-size: 16px;
   font-family: 'Electrolize', sans-serif;
   margin-top: 0.5em;
+  outline: none;
 }
 
 .address-label {
@@ -905,6 +1263,7 @@ nav a.active {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 1em;
 }
 
 /* Modal Styles */
@@ -954,6 +1313,7 @@ nav a.active {
   border-radius: 10px;
   padding: 20px;
   text-align: center;
+  margin-bottom: 2em;
 }
 
 .deposit-address {
@@ -982,6 +1342,7 @@ nav a.active {
   border-radius: 5px;
   margin-bottom: 10px;
   margin-top: 0.5em;
+  outline: none;
 }
 
 .deposit-button {
@@ -993,79 +1354,7 @@ nav a.active {
   cursor: pointer;
 }
 
-/* Game Section */
-.game_cards {
-  padding-bottom: 80px;
-}
 
-.game {
-  width: 100%;
-  height: auto;
-  background-color: #444;
-  padding: 20px;
-  margin-top: 1em;
-  border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-.game-card {
-   /* Replace with your game image */
-  background-size: contain;
-  background-position: center;
-  border-radius: 10px;
-  width: 100%;
-  height: 200px;
-  position: relative;
-  overflow: hidden; 
-}
-
-.play-button {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  background: #444;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: goldenrod;
-  font-size: 30px;
-  border: none;
-  border-radius: 10%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.play-button:hover {
-  background-color: #0056b3;
-}
-
-.play-icon {
-  width: 30px;
-  fill: #fff;
-}
-
-.game_region {
-  padding-bottom: 80px;
-}
-
-.game-console {
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  height: 600px;
-  margin-top: 1em;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-}
-
-.game-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
 
 /* Login and SignUp Section */
 .illus {
@@ -1113,8 +1402,8 @@ nav a.active {
 
 .input-container input {
   width: 100%;
-  height: 50px;
-  padding: 20px;
+  height: 20px;
+  padding: 14px;
   padding-left: 30px; /* Ensure space for the icon */
   border-radius: 5px;
   border: none;

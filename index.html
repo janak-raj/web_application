@@ -6,41 +6,61 @@
     <title>CRYPTO FINANCE BANK - Online Finance Growth Platform</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/css/app.css">
 </head>
 <body>
     <header>
-        <h1>CRYPTOFIBANK</h1>
-        <button id="toggleSidebar"><i class="fa fa-bars"></i></button>
+        <a href="index.html">
+            <div class="logo">
+                <img src="src/imgs/logo/Logo.png" alt="Cryptofibank Logo"><h1>CRYPTOFIBANK</h1>
+            </div>
+        </a>
+        
+        <button id="toggleSidebar" class="toggle-sidebar mobile-nav"><i class="fa fa-bars icon-dark"></i></button>
+        <button id="toggleSidebar2" class="toggle-sidebar user-toggle desktop-nav"><i class="fa fa-user icon-dark"></i>&nbsp;&nbsp; JRG4488JG</button>
     </header>
     
     <div class="content">
-        <h2>Welcome to the Crypto Finance Bank</h2>
+        <div class="container">
+            <h2>Welcome to the Crypto Finance Bank</h2>
         <h3>Let's start wining together.</3>
         <div class="intro">
             <img src="src/imgs/illustrator/Illustrator.png" alt="Intro Illustrator">
         </div>
         <h3>All you need is time and a little capital.</3>
+        </div>
     </div>
 
     <nav>
-        <a href="index.html"><i class="fa fa-home"></i> Home</a>
-        <a href="message.html"><i class="fa fa-comments"></i> Message</a>
-        <a href="tickets.html"><i class="fa fa-ticket"></i> Tickets</a>
-        <a href="wallet.html"><i class="fa fa-money"></i> Wallet</a>
-        <a href="profile.html"><i class="fa fa-user"></i> Profile</a>
+        <a href="index.html" class="desktop-nav active_nav"><i class="fa fa-home icon-dark"></i> Home</a>
+        <a href="index.html" class="mobile-nav active_nav"><i class="fa fa-home icon-dark"></i> Home</a>
+        <a href="message.html" class="mobile-nav"><i class="fa fa-comments icon-dark"></i> Message</a>
+        <a href="tickets.html" class="mobile-nav"><i class="fas fa-gift icon-dark"></i> Raffle</a>
+        <a href="wallet.html" class="mobile-nav"><i class="fa fa-money icon-dark"></i> Wallet</a>
+        <a href="profile.html" class="mobile-nav"><i class="fa fa-user icon-dark"></i> Profile</a>
+        <a href="about.html" class="desktop-nav"><i class="fas fa-users icon-dark"></i> About Us</a>
+        <a href="plans.html" class="desktop-nav"><i class="fas fa-list-alt icon-dark"></i> Plans</a>
+        <a href="games.html" class="desktop-nav"><i class="fas fa-gamepad icon-dark"></i> Games</a>
+        <a href="tickets.html" class="desktop-nav"><i class="fas fa-gift icon-dark"></i> Raffle</a>
+        <a href="faq.html" class="desktop-nav"><i class="fas fa-question-circle icon-dark"></i> FAQ</a>
+        <a href="contact.html" class="desktop-nav"><i class="fas fa-envelope icon-dark"></i> Contact Us</a>
     </nav>
 
     <div id="mySidenav" class="side_nav">
-        <a>Menus</a>
-        <a href="about.html">About Us</a>
-        <a href="plans.html">Plans</a>
-        <a href="games.html">Games</a>
-        <a href="tickets.html">Lottery</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="profile.html" class="desktop-nav"><i class="fa fa-user icon-dark"></i> Profile</a>
+        <a href="message.html" class="desktop-nav"><i class="fa fa-comments icon-dark"></i> Message</a>
+        <a href="tickets.html" class="desktop-nav"><i class="fas fa-ticket-alt icon-dark"></i> Tickets</a>
+        <a href="wallet.html" class="desktop-nav"><i class="fa fa-money icon-dark"></i> Wallet</a>
+        <a href="about.html" class="mobile-nav"><i class="fas fa-users icon-dark"></i> About Us</a>
+        <a href="plans.html" class="mobile-nav"><i class="fas fa-list-alt icon-dark"></i> Plans</a>
+        <a href="games.html" class="mobile-nav"><i class="fas fa-gamepad icon-dark"></i> Games</a>
+        <a href="tickets.html" class="mobile-nav"><i class="fas fa-ticket-alt icon-dark"></i> Tickets</a>
+        <a href="tickets.html" class="mobile-nav"><i class="fas fa-ticket-alt icon-dark"></i> Lottery</a>
+        <a href="faq.html" class="mobile-nav"><i class="fas fa-question-circle icon-dark"></i> FAQ</a>
+        <a href="contact.html" class="mobile-nav"><i class="fas fa-envelope icon-dark"></i> Contact Us</a>
     </div>
 </body>
 <script src="src/js/app.js"></script>
