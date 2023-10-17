@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Empire</title>
+    <!-- Link to external CSS files -->
+    <link rel="stylesheet" href="src/css/app.css">
+</head>
+<body>
+    <!-- Container for the entire game window -->
+    <div id="window">
+        <!-- Sound elements for the game -->
+        <div class="sounds">
+            <audio id="mainThemeSound" src="src/assets/sounds/mainTheme.mp3"></audio>
+            <audio id="reelsSound" src="src/assets/sounds/spin.mp3"></audio>
+            <audio id="winSound" src="src/assets/sounds/win.mp3"></audio>
+            <audio id="loseSound" src="src/assets/sounds/lose.mp3"></audio>
+            <audio id="winAlertSound" src="src/assets/sounds/winAlert.wav"></audio>
+        </div>
+        <!-- Slot machine game container -->
+        <div class="machine">
+            <!-- Container for the game content -->
+            <div class="container">
+                <!-- Display area for winner notification -->
+                <div class="winner"></div>
+            </div>
+            <!-- Handle for the slot machine -->
+            <div class="handle"></div>
+        </div>
+        <!-- Style scope for dynamic CSS settings -->
+        <style scope id="setting"></style>
+        <style scope id="update"></style>
+        <!-- New HTML elements for game features -->
+<div class="game-features">
+    <div class="balance">
+        <span>Available Balance: $</span>
+        <span id="availableBalance">1000</span>
+    </div>
+    <div class="controls">
+        <button id="spinButton" class="button">Spin</button>
+        <button id="autoSpinButton" class="button">Auto Spin</button>
+        <button id="stopButton" class="button">Stop</button>
+        <button id="maxBetButton" class="button">Max Bet</button>
+    </div>
+    <div class="earnings">
+        <span>Total Earn: $</span>
+        <span id="totalEarn">0</span>
+    </div>
+    <div class="prize">
+        <span>Winning Prize: $</span>
+        <span id="winningPrize">1000</span>
+    </div>
+    <div class="fee">
+        <span>Playing Fee: $</span>
+        <span id="playingFee">1</span>
+    </div>
+</div>
+
+        <!-- JavaScript files for the game -->
+        <script type="text/javascript" src="src/js/app.js"></script>
+    </div>
+    
+    <!-- Include JavaScript files -->
+    <script src="src/js/app.js"></script>
+</body>
+</html>

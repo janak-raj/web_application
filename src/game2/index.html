@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slot Game</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="src/css/app.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div id="gameWindow" class="window">
+        <div class="components">
+          <div class="info-section">
+            <div class="control-item">
+              <label for="playing-fee">
+                <i class="fas fa-coins"></i> Playing Fee:
+              </label>
+              <span id="playing-fee">$1</span>
+            </div>
+            <div class="control-item">
+              <label for="total-earning">
+                <i class="fas fa-dollar-sign"></i> Total Earning:
+              </label>
+              <span id="total-earning">$0</span>
+            </div>
+            <div class="control-item">
+              <label for="available-balance">
+                <i class="fas fa-wallet"></i> Available Balance:
+              </label>
+              <span id="available-balance">$100</span>
+            </div>
+            <div class="control-item">
+              <label for="winning-prize">
+                <i class="fas fa-trophy"></i> Winning Prize:
+              </label>
+              <span id="winning-prize">$1000</span>
+            </div>
+            <div class="control-item">
+              <div id="winning-message" class="slot-message"></div>
+              <div id="loss-message" class="slot-message"></div>
+            </div>
+          </div>
+          <div class="slot-machine">
+            <div class="reels">
+              <div class="reel" id="reelOne">
+                <div class="symbol">
+                  <img src="src/img/reel_icons/banana.png" alt="Cherry" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/big_win.png" alt="Orange" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/cherry.png" alt="Grape" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/lemon.png" alt="Lemon" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/melon.png" alt="Watermelon" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/prune.png" alt="Apple" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/seven.png" alt="Strawberry" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/strawberry.png" alt="Kiwi" />
+                </div>
+                <div class="symbol">
+                  <img
+                    src="src/img/reel_icons/watermelon.png"
+                    alt="Pineapple"
+                  />
+                </div>
+              </div>
+              <div class="reel">
+                <div class="symbol">
+                  <img src="src/img/reel_icons/banana.png" alt="Cherry" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/big_win.png" alt="Orange" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/cherry.png" alt="Grape" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/lemon.png" alt="Lemon" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/melon.png" alt="Watermelon" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/prune.png" alt="Apple" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/seven.png" alt="Strawberry" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/strawberry.png" alt="Kiwi" />
+                </div>
+                <div class="symbol">
+                  <img
+                    src="src/img/reel_icons/watermelon.png"
+                    alt="Pineapple"
+                  />
+                </div>
+              </div>
+              <div class="reel">
+                <div class="symbol">
+                  <img src="src/img/reel_icons/banana.png" alt="Cherry" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/big_win.png" alt="Orange" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/cherry.png" alt="Grape" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/lemon.png" alt="Lemon" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/melon.png" alt="Watermelon" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/prune.png" alt="Apple" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/seven.png" alt="Strawberry" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/strawberry.png" alt="Kiwi" />
+                </div>
+                <div class="symbol">
+                  <img
+                    src="src/img/reel_icons/watermelon.png"
+                    alt="Pineapple"
+                  />
+                </div>
+              </div>
+              <div class="reel">
+                <div class="symbol">
+                  <img src="src/img/reel_icons/banana.png" alt="Cherry" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/big_win.png" alt="Orange" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/cherry.png" alt="Grape" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/lemon.png" alt="Lemon" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/melon.png" alt="Watermelon" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/prune.png" alt="Apple" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/seven.png" alt="Strawberry" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/strawberry.png" alt="Kiwi" />
+                </div>
+                <div class="symbol">
+                  <img
+                    src="src/img/reel_icons/watermelon.png"
+                    alt="Pineapple"
+                  />
+                </div>
+              </div>
+              <div class="reel">
+                <div class="symbol">
+                  <img src="src/img/reel_icons/banana.png" alt="Cherry" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/big_win.png" alt="Orange" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/cherry.png" alt="Grape" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/lemon.png" alt="Lemon" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/melon.png" alt="Watermelon" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/prune.png" alt="Apple" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/seven.png" alt="Strawberry" />
+                </div>
+                <div class="symbol">
+                  <img src="src/img/reel_icons/strawberry.png" alt="Kiwi" />
+                </div>
+                <div class="symbol">
+                  <img
+                    src="src/img/reel_icons/watermelon.png"
+                    alt="Pineapple"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="betting-section">
+            <div class="betting-options">
+              <div class="bet-option">
+                <button>$10</button>
+              </div>
+              <div class="bet-option">
+                <button>$50</button>
+              </div>
+              <div class="bet-option">
+                <button>$100</button>
+              </div>
+              <div class="bet-option">
+                <button>$200</button>
+              </div>
+              <div class="bet-option">
+                <button>$250</button>
+              </div>
+              <div class="bet-option">
+                <button>$500</button>
+              </div>
+              <div class="bet-option">
+                <button>$1000</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <div class="control-buttons">
+            <div class="cbs">
+              <button id="stop-background-music" class="music-button">
+                <i class="fas fa-music"></i> Music
+            </button>
+              <button id="spin-button"><i class="fas fa-play"></i> Spin</button>
+              <button id="auto-spin-button">
+                <i class="fas fa-redo"></i> Auto
+              </button>
+              <button id="stop-auto-spin-button" style="display: none">
+                <i class="fas fa-stop"></i> Stop
+              </button>
+              <button id="max-bet-button">
+                <i class="fas fa-hand-holding-usd"></i> Max Bet
+              </button>
+              <div class="winning-prize-section">
+                <span>Winning Prize: $</span>
+                <span id="winning-prize-amount">1000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="other-components">
+          <div class="betting-banner">
+            <div>
+              <div><div>Bet Amount</div></div>
+            </div>
+          </div>
+          <div class="betting-banner left-banner">
+            <div>
+              <div><div>Bet Amount</div></div>
+            </div>
+          </div>
+
+          <div class="slot-glass"></div>
+        </div>
+      </div>
+    </div>
+
+    <audio
+      id="backMusic"
+      src="src/music/mainTheme.mp3"
+      preload="auto"
+      autoplay
+      loop
+    ></audio>
+    <audio id="spinSound" src="src/sounds/spin.mp3" loop></audio>
+    <audio id="winSound" src="src/sounds/winAlert.wav"></audio>
+    <audio id="loseSound" src="src/sounds/lose.mp3"></audio>
+    <audio id="outOfBalanceSound" src="src/sounds/SpinHit.m4a"></audio>
+    <audio id="jackpotSound" src="src/sounds/BonusCollect.wav"></audio>
+    <audio id="autoSpinSound" src="src/sounds/SpinButton.m4a"></audio>
+    <audio id="spinButtonClickSound" src="src/sounds/SlotIn.mp3"></audio>
+    <audio id="stopButtonClickSound" src="src/sounds/coin.mp3"></audio>
+  </body>
+  <script src="src/js/app.js"></script>
+</html>

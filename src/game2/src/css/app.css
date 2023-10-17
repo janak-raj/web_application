@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Electrolize', sans-serif;
+    text-align: center;
+    background-color: #000;
+}
+
+.wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.window {
+    width: 92%;
+    height: auto;
+    margin-top: 2em;
+    padding: 20px;
+    background-color: #4B4453;
+    /*
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    */
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.components {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.slot-machine {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid goldenrod;
+    border-style: groove;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.info-section {
+    width: 20%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    border: 4px solid goldenrod;
+    border-style: groove;
+    z-index: 2;
+}
+
+.betting-section {
+    width: 20%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    border: 4px solid goldenrod;
+    border-style: groove;
+    z-index: 2;
+}
+
+.betting-section .betting-options {
+    width: 100%;
+    height: auto;
+    padding: 6px;
+    display: block;
+    /*
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    */
+}
+
+.betting-section .betting-options .bet-option {
+    width: 100%;
+    margin-top: 0.3em;
+}
+
+.betting-section .betting-options .bet-option button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-family: 'Electrolize', sans-serif;
+    background-color: goldenrod;
+    cursor: pointer;
+}
+
+.betting-section .betting-options .bet-option:first-child {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+.betting-section .betting-options .bet-option:nth-child(2) {
+    width: 40%;
+}
+
+.betting-section .betting-options .bet-option:nth-child(3) {
+    width: 50%;
+}
+
+.betting-section .betting-options .bet-option:nth-child(4) {
+    width: 65%;
+}
+
+.betting-section .betting-options .bet-option:nth-child(5) {
+    width: 75%;
+}
+
+.betting-section .betting-options .bet-option:nth-child(6) {
+    width: 90%;
+}
+
+.betting-section .betting-options .bet-option button:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+
+.control-section {
+    width: 100%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    border: 4px solid goldenrod;
+    border-style: groove;
+}
+
+.reels {
+    display: flex;
+    overflow: hidden;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.reel {
+    width: 100%;
+    height: 398px;
+    border: 1px solid goldenrod;
+    border-style: groove;
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    animation-timing-function: cubic-bezier(0.36, 1.28, 0.75, 1.1);
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+.reel .symbol {
+    width: 92%;
+    padding: 24px;
+    height: 126px;
+    background: transparent;
+    border: none;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.reel .symbol img {
+    width: 100%;
+    height: auto;
+}
+
+.slot-message {
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    font-size: 16px;
+    animation: bounce 0.5s ease infinite alternate;
+    border-radius: 2px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    display: none;
+}
+
+#winning-message {
+    background-color: #00dd00;
+    mix-blend-mode: difference;
+}
+
+#loss-message {
+    background-color: #dd0000;
+    mix-blend-mode: difference;
+}
+
+.winning-prize-section {
+    font-size: 24px;
+    display: none;
+}
+
+/* Add hover animations for buttons */
+.control-buttons button:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.symbol {
+    width: 50px;
+    height: 50px;
+    background-color: #f2f2f2;
+    border: 1px solid #000;
+    margin: 5px;
+}
+
+.info {
+    margin: 20px;
+}
+
+.balance-section {
+    font-size: 18px;
+}
+
+/* Styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.reels .roll {
+    animation: roll 0.5s linear infinite;
+}
+
+@-moz-keyframes roll {
+    to {
+        transform: translateY(-1040px);
+    }
+}
+
+@-webkit-keyframes roll {
+    to {
+        transform: translateY(-1040px);
+    }
+}
+
+@-o-keyframes roll {
+    to {
+        transform: translateY(-1040px);
+    }
+}
+
+@keyframes roll {
+    to {
+        transform: translateY(-1040px);
+    }
+}
+
+.control-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.control-item {
+    display: flex;
+    flex-direction: column;
+    color: goldenrod;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 4px solid goldenrod;
+    border-style: dashed;
+    background-color: #4B4453;
+    
+}
+
+.control-item:first-child label {
+    color: goldenrod;
+}
+
+.control-item:nth-child(2) label {
+    color: goldenrod;
+}
+
+.control-item:last-child {
+    min-height: 140px;
+}
+
+label {
+    font-weight: bold;
+    
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.cbs {
+    width: 60%;
+    padding: 20px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.control-buttons button {
+    width: 20%;
+    height: 40px;
+    background-color: goldenrod;
+    color: white;
+    border: none;
+    border-radius: 2%;
+    font-size: 18px;
+    font-family: 'Electrolize', sans-serif;
+    cursor: pointer;
+    border: 6px solid goldenrod;
+    border-style: dashed;
+    mix-blend-mode: difference;
+}
+
+button:hover {
+    background-color: #e53935;
+}
+
+.betting-banner {
+    width: 193px;
+    height: 407.5px;
+    position: absolute;
+    top: 3.25em;
+    right: 4.3em;
+    mix-blend-mode: difference;
+    background-color: antiquewhite;
+    z-index: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.betting-banner.left-banner {
+    top: 3.25em;
+    right: unset;
+    left: 4.5em;
+    z-index: 0;
+}
+
+.betting-banner div {
+    width: 196px;
+    height: 407.5px;
+    border-top: 4px solid green;
+    border-right: 4px solid goldenrod;
+    border-top-right-radius: 100%;
+    background-color: red;
+}
+
+.betting-banner.left-banner div {
+    width: 180px;
+}
+
+.betting-banner div div {
+    width: 180px;
+    height: 400px;
+    float: right;
+    border-top: 4px solid green;
+    border-left: 4px solid goldenrod;
+    border-top-right-radius: 0%;
+    border-top-left-radius: 20%;
+    background-color: transparent;
+}
+
+.betting-banner div div div {
+    width: 180px;
+    height: 200px;
+    border: none;
+    margin-right: 2em;
+    margin-top: 1em;
+    border-radius: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    text-align: center;
+    transform: rotate(55deg);
+}
+
+.slot-glass {
+    width: 53.2%;
+    height: 410px;
+    position: absolute;
+    top: 3.2em;
+    left: 23.6%;
+    mix-blend-mode: difference;
+    background-color: antiquewhite;
+    z-index: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.slot_win {
+    border: 3px solid rgba(255, 255, 255, 1.0);
+    animation: slot_win 1.0s infinite ease;
+  }
+  
+  @keyframes slot_win {
+    0% {
+      transform: scale(1.0, 1.0);
+    }
+    50% {
+      transform: scale(0.9, 0.9);
+    }
+    100% {
+      transform: scale(1.0, 1.0);
+    }
+  }

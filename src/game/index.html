@@ -1,251 +1,230 @@
 <!DOCTYPE html>
-<head>
-	<title>Plebe Slot</title>
- <link
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slot Game</title>
+    <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="res/css/modal.css">
-    <link rel="stylesheet" type="text/css" href="res/css/app.css">
-	<link rel="stylesheet" href="res/css/glcf.css">
-    <script src="https://kit.fontawesome.com/a46924b542.js" crossorigin="anonymous"></script>
-</head>
-<html>
-<body onload="runGameLoader()">
-	<div id="gameLoader" style="background: #123456;">
-        <div class="loading-content">
-            <div class="loading-square">
-              <div class="loading-square__7"></div>
-              <div class="loading-square__8"></div>
-              <div class="loading-square__9"></div>
-              <div class="loading-square__4"></div>
-              <div class="loading-square__5"></div>
-              <div class="loading-square__6"></div>
-              <div class="loading-square__1"></div>
-              <div class="loading-square__2"></div>
-              <div class="loading-square__3"></div>
+    <link rel="stylesheet" href="src/css/app.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="gameWindow" class="window">
+        <div class="slot-machine">
+          <div class="reels">
+            <div class="reel" id="reelOne">
+              <div class="symbol">
+                <img src="src/img/reel_icons/banana.png" alt="Cherry" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/big_win.png" alt="Orange" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/cherry.png" alt="Grape" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/lemon.png" alt="Lemon" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/melon.png" alt="Watermelon" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/prune.png" alt="Apple" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/seven.png" alt="Strawberry" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/strawberry.png" alt="Kiwi" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/watermelon.png" alt="Pineapple" />
+              </div>
             </div>
-            <div class="loading-fade">
-              <div class="loading-fade__1">
-                Wanna play game...
+            <div class="reel">
+              <div class="symbol">
+                <img src="src/img/reel_icons/banana.png" alt="Cherry" />
               </div>
-              
-              <div class="loading-fade__3">
-                Spin the Wheel
+              <div class="symbol">
+                <img src="src/img/reel_icons/big_win.png" alt="Orange" />
               </div>
-              
-              <div class="loading-fade__5">
-                Win Much!
+              <div class="symbol">
+                <img src="src/img/reel_icons/cherry.png" alt="Grape" />
               </div>
-
-              <div class="loading-fade__7">
-                Just keep playing...
+              <div class="symbol">
+                <img src="src/img/reel_icons/lemon.png" alt="Lemon" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/melon.png" alt="Watermelon" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/prune.png" alt="Apple" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/seven.png" alt="Strawberry" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/strawberry.png" alt="Kiwi" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/watermelon.png" alt="Pineapple" />
               </div>
             </div>
-            <div class="loading-bar">
-              <div class="loading-bar__holder">
-                <div class="loading-bar__filled"></div>
+            <div class="reel">
+              <div class="symbol">
+                <img src="src/img/reel_icons/banana.png" alt="Cherry" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/big_win.png" alt="Orange" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/cherry.png" alt="Grape" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/lemon.png" alt="Lemon" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/melon.png" alt="Watermelon" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/prune.png" alt="Apple" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/seven.png" alt="Strawberry" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/strawberry.png" alt="Kiwi" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/watermelon.png" alt="Pineapple" />
+              </div>
+            </div>
+            <div class="reel">
+              <div class="symbol">
+                <img src="src/img/reel_icons/banana.png" alt="Cherry" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/big_win.png" alt="Orange" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/cherry.png" alt="Grape" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/lemon.png" alt="Lemon" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/melon.png" alt="Watermelon" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/prune.png" alt="Apple" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/seven.png" alt="Strawberry" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/strawberry.png" alt="Kiwi" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/watermelon.png" alt="Pineapple" />
+              </div>
+            </div>
+            <div class="reel">
+              <div class="symbol">
+                <img src="src/img/reel_icons/banana.png" alt="Cherry" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/big_win.png" alt="Orange" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/cherry.png" alt="Grape" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/lemon.png" alt="Lemon" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/melon.png" alt="Watermelon" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/prune.png" alt="Apple" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/seven.png" alt="Strawberry" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/strawberry.png" alt="Kiwi" />
+              </div>
+              <div class="symbol">
+                <img src="src/img/reel_icons/watermelon.png" alt="Pineapple" />
               </div>
             </div>
           </div>
-    </div>
-	<div class="main_area" id="window">
-		<div class="wrapper">
-			<div class="game_area">
-				<main>
-					<div class="game_title">
-						<section id="status">WELCOME!</section>
-					</div>
-					<div id="Slots">
-						<div id="slot1" class="a1"></div>
-						<div id="slot2" class="a1"></div>
-						<div id="slot3" class="a1"></div>
-					</div>
-					<div class="game_play">
-						<section onclick="checkWalletBalanceAvailability()" id="Gira">TAKE A SPIN!</section>
-					</div>
-					<section id="options">
-						<div class="option">
-							<img src="res/icons/audioOn.png" id="audio" class="option" onclick="toggleAudio()" />
-						</div>
-						<div class="option"><i class='bx bx-info-circle'></i></div>
-						<div class="option">
-							<div class="balance"><span>$</span><span id="walletBalanceBucks">00</span><span>.</span><span id="walletBalanceCents">00</span></div>
-							<div class="deposit__btn"><button id="depBtn">Deposit</button></div>
-						</div>
-						<div class="option">
-							<button id="prizeTableBtn">Prize Table</button>
-						</div>
-					</section>
-				</main>
-			</div>
-		</div>
-	</div>
-
-<!-- The Modal -->
-<div id="depositModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>Deposit Now</h2>
-    </div>
-    <div class="modal-body">
-      <div class="container__box">
-      	<!--<form>
-      		<div class="form__control">
-      			<label>Enter value to deposit:</label><br>
-      			<input type="number" name="dep_amnt" id="depAmnt">
-      		</div>
-
-      		<div class="form__btn">
-      			<button>Deposit</button>
-      		</div>
-      	</form>-->
-
-      	<div class="dep__area">
-	        <div class="amount-input">
-	          <div class="entry">
-	            <label>Enter amount to deposit</label>
-	            <div class="entry-input">
-	              <i class="fas fa-dollar-sign"></i>
-	              <input type="number" value="20.00" id="entry" min="0" max="9999" step="0.01" oninput="getDepositAmount(this.value)"/>
-	            </div>
-	          </div>
-	          <div class="win">
-	            <label></label>
-	            <div class="win-input">
-	              <i class="fas fa-dollar-sign"></i>
-	              <input type="text" value="40" id="to_win" disabled/>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="amounts">
-	          
-	        </div>
-	        <div class="place-btn">
-	          <button id="place-entry" onclick="depositNow()" class="btn btn--primary">Deposit Now</button>
-	        </div>
-	      </div>
+          <div class="control-section">
+            <div class="control-row">
+              <div class="control-item">
+                <label for="playing-fee">
+                  <i class="fas fa-coins"></i> Playing Fee:
+                </label>
+                <span id="playing-fee">$1</span>
+              </div>
+              <div class="control-item">
+                <label for="total-earning">
+                  <i class="fas fa-dollar-sign"></i> Total Earning:
+                </label>
+                <span id="total-earning">$0</span>
+              </div>
+              <div class="control-item">
+                <label for="available-balance">
+                  <i class="fas fa-wallet"></i> Available Balance:
+                </label>
+                <span id="available-balance">$100</span>
+              </div>
+              <div class="control-item">
+                <label for="winning-prize">
+                  <i class="fas fa-trophy"></i> Winning Prize:
+                </label>
+                <span id="winning-prize">$1000</span>
+              </div>
+            </div>
+            <div class="control-row"></div>
+            <div class="control-buttons">
+              <div class="cbs">
+                <button id="spin-button">
+                  <i class="fas fa-play"></i> Spin
+                </button>
+                <button id="auto-spin-button">
+                  <i class="fas fa-redo"></i> Auto Spin
+                </button>
+                <button id="stop-auto-spin-button" style="display: none">
+                  <i class="fas fa-stop"></i> Stop
+                </button>
+                <button id="max-bet-button">
+                  <i class="fas fa-hand-holding-usd"></i> Max Bet
+                </button>
+                <div class="winning-prize-section">
+                  <span>Winning Prize: $</span>
+                  <span id="winning-prize-amount">1000</span>
+                </div>
+              </div>
+            </div>
+            <div id="winning-message" class="slot-message"></div>
+            <div id="loss-message" class="slot-message"></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="modal-footer">
-      <h3></h3>
-    </div>
-  </div>
 
-</div>
-
-<!-- The Modal -->
-<div id="prizeTableModal" class="modal prize__table">
-
-  <!-- Modal content -->
-  <div class="modal-content prize__table">
-    <div class="modal-header">
-      <span class="close__prizes">&times;</span>
-      <h2>Prize Table</h2>
-    </div>
-    <div class="modal-body">
-      <div>
-      	<div style="overflow-x: auto;">
-		  <table width="100%">
-		    <tr>
-		      <th width="80%">Combinations</th>
-		      <th width="20%">Prize</th>
-		    </tr>
-		    <tr>
-		      <td>
-		      	<img src="res/tiles/Plebe_1.jpg"> X
-		      	<img src="res/tiles/Plebe_1.jpg"> X
-		      	<img src="res/tiles/Plebe_1.jpg">
-		      </td>
-		      <td>x15</td>
-		    </tr>
-		    <tr>
-		      <td>
-		      	<img src="res/tiles/Plebe_2.jpg"> X
-		      	<img src="res/tiles/Plebe_2.jpg"> X
-		      	<img src="res/tiles/Plebe_2.jpg">
-		      </td>
-		      <td>x10</td>
-		    </tr>
-		    <tr>
-		      <td>
-		      	<img src="res/tiles/Plebe_3.jpg"> X
-		      	<img src="res/tiles/Plebe_3.jpg"> X
-		      	<img src="res/tiles/Plebe_3.jpg">
-		      </td>
-		      <td>x8</td>
-		    </tr>
-		    <tr>
-		    	<td>
-		      	<img src="res/tiles/P.jpg"> X
-		      	<img src="res/tiles/P.jpg"> X
-		      	<img src="res/tiles/P.jpg">
-		      </td>
-		      <td>x3</td>
-		    </tr>
-		    <tr>
-		    	<td>
-		      	<img src="res/tiles/L.jpg"> X
-		      	<img src="res/tiles/L.jpg"> X
-		      	<img src="res/tiles/L.jpg">
-		      </td>
-		      <td>x3</td>
-		    </tr>
-		    <tr>
-		    	<td>
-		      	<img src="res/tiles/E.jpg"> X
-		      	<img src="res/tiles/E.jpg"> X
-		      	<img src="res/tiles/E.jpg">
-		      </td>
-		      <td>x3</td>
-		    </tr>
-		    <tr>
-		    	<td>
-		      	<img src="res/tiles/B.jpg"> X
-		      	<img src="res/tiles/B.jpg"> X
-		      	<img src="res/tiles/B.jpg">
-		      </td>
-		      <td>x3</td>
-		    </tr>
-		    <tr>
-		    	<td>
-		      	<img src="res/tiles/Plebe_1.jpg"> X
-		      	<img src="res/tiles/Plebe_1.jpg">
-		      </td>
-		      <td>x2</td>
-		    </tr>
-		    <tr>
-		    	<td>
-		      	<img src="res/tiles/Plebe_2.jpg"> X
-		      	<img src="res/tiles/Plebe_2.jpg">
-		      </td>
-		      <td>x1</td>
-		    </tr>
-		    <tr>
-		    	<td>
-		      	<img src="res/tiles/Plebe_3.jpg"> X
-		      	<img src="res/tiles/Plebe_3.jpg">
-		      </td>
-		      <td>x0.5</td>
-		    </tr>
-		  </table>
-		</div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <h3></h3>
-    </div>
-  </div>
-
-</div>
-
-</body>
-<script src="res/js/app.js"></script>
-<script src="res/js/depModal.js"></script>
-<script src="res/js/dep.js"></script>
-<script src="res/js/prizeModal.js"></script>
-<script src="res/js/utils.js"></script>
+    <audio id="backMusic" src="src/music/BackMusic.mp3" preload="auto" autoplay loop></audio>
+    <audio id="spinSound" src="src/sounds/SpinLoop4.m4a" loop></audio>
+    <audio id="winSound" src="src/sounds/Jackpot.m4a"></audio>
+    <audio id="loseSound" src="src/sounds/Lose.m4a"></audio>
+    <audio id="outOfBalanceSound" src="src/sounds/SpinHit.m4a"></audio>
+    <audio id="jackpotSound" src="src/sounds/BonusCollect.wav"></audio>
+    <audio id="autoSpinSound" src="src/sounds/SpinButton.m4a"></audio>
+    <audio id="spinButtonClickSound" src="src/sounds/SpinHit.m4a"></audio>
+    <audio id="stopButtonClickSound" src="src/sounds/PullLiver.m4a"></audio>
+  </body>
+  <script src="src/js/app.js"></script>
 </html>
